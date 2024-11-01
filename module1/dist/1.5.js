@@ -6,3 +6,4 @@ const user = {
     lastName: 'Billah',
     isMarried: true,
 };
+// user.company = "ph"

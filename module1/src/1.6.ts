@@ -1,5 +1,5 @@
+{
 // Learning function
-
 function add(a: number, b: number): number {
     return a + b
 }
@@ -23,3 +23,5 @@ console.log(result);
 const arr: number[] = [3, 54, 65, 2]
 
 const newArr: number[] = arr.map((e:number): number => e * e ) 
+
+}
