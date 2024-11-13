@@ -4,15 +4,4 @@
     // const arrOfString2 : string[] = arrOfNumbers.map((num: number): string => num.toString())
     console.log(arrOfString);
     
-    
-    
-    
-
-
-
-
-
-
-
-
 }
