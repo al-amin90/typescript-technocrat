@@ -106,57 +106,95 @@
 
     //===> Task 7: Type Assertion and Narrowing
     const isType = (value: string | Number): string | number | undefined => {
-        if(typeof value === "string"){
+        if (typeof value === "string") {
             return value.length;
-        }else if(typeof value === "number"){
-            return Math.pow(value , 2)
+        } else if (typeof value === "number") {
+            return Math.pow(value, 2)
         }
     }
     const result3 = isType(9);
     // console.log(result3);    
 
     //===> Task 8: Intersection Types
-    type User ={
+    type User = {
         name: string;
         email: string;
     }
     type Admin = {
         adminLevel: "Leader" | "employ";
-        description : string;
+        description: string;
     }
     type AdminUser = User & Admin;
 
-    const describeAdmin = (user: AdminUser) : string => {
+    const describeAdmin = (user: AdminUser): string => {
         return user.description
     }
-    const result4 = describeAdmin({name: "alamin", email: "iejesun30@gmail.com", adminLevel: "employ", description: "there is nothing to say"})
+    const result4 = describeAdmin({ name: "alamin", email: "iejesun30@gmail.com", adminLevel: "employ", description: "there is nothing to say" })
     // console.log(result4);
 
     //===> Task 9: Optional Chaining
     type employ = {
         name: string;
-        address?: {city?: string}
-    } 
-    const getEmployeeCity = (employee: employ) : string | undefined => {
+        address?: { city?: string }
+    }
+    const getEmployeeCity = (employee: employ): string | undefined => {
         return employee?.address?.city
     }
     // console.log(getEmployeeCity({name: 'alamin', address:{city: "kushtia"}}));
 
     //===> Task 10: Nullish Coalescing
-    const getDisplayName = (name: string | null |undefined) : string => {
+    const getDisplayName = (name: string | null | undefined): string => {
         return name ?? "Anonymous"
     }
     // console.log(getDisplayName("s"));
 
     //===> Task 11: Unknown Type
     const processData = (data: unknown): string | number => {
-        if(typeof data === "string"){
+        if (typeof data === "string") {
             return data.toUpperCase();
-        }else if(typeof data === "number"){
+        } else if (typeof data === "number") {
             return Math.pow(data, 2)
-        }else{
+        } else {
             return "Wrong Output"
         }
     }
     // console.log(processData("alvaikunta"));
+
+    //===> Task 12: Never Type
+    // const handleError = (message: string): never => {
+    //     throw new Error (message)
+    // }
+
+    // try{
+    //     handleError("something went wrong")
+    // }catch(error){
+    //     console.log(error);
+    // }
+
+
+    //===> Task 14: Asynchronous TypeScript and Type Aliases
+    type MyUser = {
+        name: string;
+        age: number
+    }
+    const fetchUserData = (): Promise<MyUser> => {
+        return new Promise<MyUser>((resolve, reject) => {
+            setTimeout(() => {
+                const user: MyUser = {
+                    name: "al-amin",
+                    age: 34
+                }
+                resolve(user)
+            }, 2000)
+        })
+    }
+
+    const getData = async () => {
+        const data = await fetchUserData();
+        // console.log(data);
+    }
+    getData()
+
+    //===> Task 15: Type Guards
+
 }
