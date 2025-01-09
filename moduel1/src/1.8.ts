@@ -13,8 +13,8 @@ const user  = {
 
 const {
     contactNo: phoneNo,
-    name: {first: nickName}
+    name: {last}
 } = user
 
 const myFriends = ['a', "b", "c", "d", "e"];
-const [,,bestFriends, ...rest] = myFriends;
+const [, , friend , ...rest] = myFriends;

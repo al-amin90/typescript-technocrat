@@ -15,7 +15,8 @@
         if(typeof value === "number"){
              console.log(`Converted Spreed ${(value * 1000)/ 3600} Ms^-1`);
         }else if(typeof value === "string"){
-            const convertedValue = parseFloat(value.split(" ")[0])
+            const [result, unit] = value.split(" ")
+            const convertedValue = parseFloat(result)
             console.log(`Converted Spreed ${(convertedValue * 1000)/ 3600} Ms^-1`);
        }else{
         console.log("Wrong Output");

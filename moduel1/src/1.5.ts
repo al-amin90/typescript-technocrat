@@ -1,13 +1,12 @@
 {
 // Object
-
 const user: {
-    company: "Programming Hero"; //type: Literal types
     first: string;
-    middle?: string; // Optional type
+    middle?: string;
     last: string;
-    isMarried: boolean;
-    readonly fullName: string
+    isMarried: true;
+    company: "Programming Hero"; //type: Literal types
+    fullName: string;
 }  = {
     first: "al",
     // middle: "amiin",

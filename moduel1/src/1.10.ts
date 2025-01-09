@@ -5,7 +5,7 @@
 
     type Developer = FrontendDeveloper | FullStackDeveloper
 
-    const newDeveloper : Developer = 'fakibaz'
+    const newDeveloper: Developer = 'fakibaz'
 
     type User = {
         name: string,
@@ -14,7 +14,7 @@
         bloodGrope: 'O+' | "A+" | "b+"
     }
 
-    const User1 :User = {
+    const User1: User = {
         name: "al amin",
         gender: "male",
         bloodGrope: "b+"
@@ -26,25 +26,18 @@
     type FrontendDevelopers = {
         skills: string[],
         designation1: 'FrontEnd Developer'
-    }      
+    }
     type BackendDevelopers = {
         skills: string[],
         designation2: 'Backend Developer'
-    }        
+    }
     type FullStackDevelopers = FrontendDevelopers & BackendDevelopers;
 
-    const fresher : FullStackDevelopers = {
+    const fresher: FullStackDevelopers = {
         skills: ['html', 'css', 'node'],
-        designation1: 'FrontEnd Developer',
-        designation2: 'Backend Developer'
+        designation1 : 'FrontEnd Developer',
+        designation2 : 'Backend Developer'
     }
-
-
-
-
-
-
-
 
 
 

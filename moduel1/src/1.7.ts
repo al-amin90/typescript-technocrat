@@ -25,7 +25,7 @@ const teachers = {
 
 const greetingFriends = (...friends: string[]) => {
     // console.log(`Hi ${f1} ${f2} ${f3}`);
-    friends.forEach((f) => console.log(`Hi ${f}`); )
+    friends.forEach((f) => console.log(`Hi ${f}`))
 }
 
 greetingFriends("a", "b", "c", "d")
