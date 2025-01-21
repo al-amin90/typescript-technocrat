@@ -12,12 +12,12 @@
         }
 
         //setter
-        set addDiposit(amount: number){
+        set addDiposit(amount: number) {
             this._balance = this._balance + amount;
         }
 
         //getter
-        get balance(){
+        get balance() {
             return this._balance
         }
     }
@@ -27,5 +27,32 @@
     // goribManusherAccount.addDiposit(400); //function call korci
     goribManusherAccount.addDiposit = 300; // property ar moto kore
 
-    console.log(goribManusherAccount.balance); // property ar moto kore
+    // console.log(goribManusherAccount.balance); // property ar moto kore
+}
+
+{ //----------------------------------------------------------------
+    class BankAccount {
+
+        constructor(readonly id: number, public name: string, protected balance: number) { }
+
+        set addDeposit(amount: number) {
+            this.balance = this.balance + amount
+        }
+        get getBalance() {
+            return this.balance
+        }
+    }
+
+    // class StudentAccount extends BankAccount {
+    //     test() {
+    //         this.balance
+    //     }
+    // }
+
+    const goribManusherAccount = new BankAccount(111, "Mr. gorib", 5)
+
+    goribManusherAccount.addDeposit = 50
+    goribManusherAccount.addDeposit = 5
+    console.log(goribManusherAccount.getBalance);
+
 }

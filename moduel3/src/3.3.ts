@@ -23,10 +23,10 @@
         if("role" in user){
             console.log(`My name is ${user.name} and my role is ${user.role}`);
         }else{
-            console.log(`My name is ${user.name}`);
+            console.log(`My name is ${user.name} `);
         }
       }
       const user1: NormalUser = {name: "al amin"}
       const user2: AdminUser = {name: "al amin", role: "admin"}
-      getUser(user1)
+      getUser(user2)
 }

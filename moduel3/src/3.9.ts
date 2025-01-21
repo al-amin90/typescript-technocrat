@@ -53,6 +53,55 @@
             console.log("i am testing");
         }
     }
+}
 
+{// --------------------------------------------------------------------
 
+    interface Vehicle1 {
+        startEngine(): void;
+        stopEngine(): void;
+        move(): void;
+    }
+
+    class Car implements Vehicle1 {
+        startEngine(): void{
+            console.log("the car is starting the car engine");
+        }
+        stopEngine(): void {
+            console.log("the car is stop the engine");
+        }
+        move(): void {
+            console.log("the car is moving");
+        }
+        test(): void {
+            console.log("i am testing");
+        }
+    }
+
+    const toyotaCar = new Car()
+    toyotaCar.stopEngine()
+
+    abstract class Vehicle2 {
+        abstract startEngine(): void;
+        abstract stopEngine(): void;
+        abstract move(): void;
+        abstract test(): void;
+    }
+
+    class Car2 extends Vehicle2 {
+        startEngine(): void{
+            console.log("the car is starting the car engine");
+        }
+        stopEngine(): void {
+            console.log("the car is stop the engine");
+        }
+        move(): void {
+            console.log("the car is moving");
+        }
+        test(): void {
+            console.log("i am testing");
+        }
+    }
+    const hondaCar = new Car2()
+    hondaCar.move()
 }
