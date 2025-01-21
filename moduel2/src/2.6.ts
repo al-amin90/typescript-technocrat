@@ -1,14 +1,18 @@
 {
     //constraints
-    const addCourseToStudent = <T extends { id: number; name: string; email: string }>(student: T) => {
-        const course = 'Next Level Web Development'
+    const addCourseToStudent = <T extends { id: number, name: string, email: string }>(student: T) => {
+        const course: string = 'Next Level Web Development'
         return {
             ...student,
             course
         }
     }
 
-    const student3 = addCourseToStudent({ id: 4, email: "emni@gmail.com", name: "emni" })
+    const student3 = addCourseToStudent<{
+        id: number;
+        email: string;
+        name: string;
+    }>({ id: 4, email: "emni@gmail.com", name: "emni" })
 
     const student1 = addCourseToStudent<{
         id: number;

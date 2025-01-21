@@ -10,8 +10,7 @@
 
     type NameAge = Pick<Person, "name" | "age">
     // ===> Omit
-    type ContactInfo = Omit<Person, "name" | "age">
-
+    type ContactInfo = Omit<Person, "name" | "age" | "email">
     // ===> Required
     type PersonRequired = Required<Person>
 
@@ -26,21 +25,23 @@
         age: 23,
         contactNo: 3535
     }
-    person1.age = 20
+    person1.age = 200
 
     // ===> Record
-    //  type obj = {
-    //     a: string;
-    //     b: string
-    //  }
-    type Obj = Record<string, string>
-    const EmptyObj: Record<string, unknown> = {}
-
-    const myObj: Obj = {
-        a: "x",
-        b: "y",
-        c: "z",
-        d: "g"
+     type MyObj1 = {
+        a: string;
+        b: string
+     }
+    type MyObj2 = Record<string, string>
+    
+    const obj1: MyObj2 = {
+        a: "xx",
+        b: "yy",
+        c: "zz",
+        d: "gg"
     }
-
+    
+    const EmptyObj: Record<string, unknown> = {}
+    EmptyObj.age = 34;
+    EmptyObj.name = "al"
 }

@@ -1,7 +1,7 @@
 {
 ///         intregate ---- Generic
 
-interface Developer<T, B = null> {
+interface Developer< T, X = null> {
     name: string;
     computer: {
         brand: string;
@@ -9,7 +9,7 @@ interface Developer<T, B = null> {
         releaseYear: number;
     };
     smartWatch: T;
-    bike?: B
+    bike?: X
 }
 
 type EniLabWatch = {

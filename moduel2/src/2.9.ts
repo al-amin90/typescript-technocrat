@@ -1,10 +1,10 @@
 {
 // conditional type
-type a1 = number;
-type b1 = boolean;
+type a1 = boolean;
+type b1 = undefined;
 
-type x = a1 extends null ? true : false ; // conditional type
-type y = a1 extends null ? true : b1 extends undefined ? undefined : any
+type x = a1 extends number ? number : null ; // conditional type
+type y = b1 extends boolean ? boolean : a1 extends number ? number : any
 
 type Sheikh = {
     car: string;
@@ -13,7 +13,7 @@ type Sheikh = {
     plane: string
 }
 
-type checkVehicle<T> = T extends keyof Sheikh ? true : false;
+type checkVehicle<T> = T extends keyof Sheikh ? true : false
 type HasCar = checkVehicle<"plane"> 
 
 
