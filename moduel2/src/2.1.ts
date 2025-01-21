@@ -3,7 +3,8 @@
     let anything : any;
 
     anything = 34;
-    // (anything as number).
+
+    // (anything as number). 
 
     const KgToGm = (value: string | number): string | number |undefined =>  {
         if(typeof value === "string"){
@@ -20,7 +21,6 @@
     type CustomError = {
         message: "all error"
     }
-
     
     try{
 

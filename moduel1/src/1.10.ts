@@ -11,13 +11,13 @@
         name: string,
         email?: string,
         gender: 'male' | 'female',
-        bloodGrope: 'O+' | "A+" | "b+"
+        bloodGrope: 'O+'|"A+"|"b+"
     }
 
     const User1: User = {
         name: "al amin",
-        gender: "male",
-        bloodGrope: "b+"
+        gender: "female",
+        bloodGrope: "O+"
     }
 
 

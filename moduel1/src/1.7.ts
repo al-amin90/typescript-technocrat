@@ -23,7 +23,7 @@ const teachers = {
 
 // Rest Operator 
 
-const greetingFriends = (...friends: string[]) => {
+const greetingFriends = (...friends: string[]) : void =>  {
     // console.log(`Hi ${f1} ${f2} ${f3}`);
     friends.forEach((f) => console.log(`Hi ${f}`))
 }

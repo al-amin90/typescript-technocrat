@@ -1,8 +1,8 @@
 {
 // Object
 const user: {
-    first: string;
-    middle?: string;
+    readonly first: string;
+    middle: string;
     last: string;
     isMarried: true;
     company: "Programming Hero"; //type: Literal types
@@ -16,7 +16,8 @@ const user: {
     fullName: "Al Amin Parvaje"
 }
 
-// user.fullName = "nothing"
+
+user.first = "nothing"
 
 
 
