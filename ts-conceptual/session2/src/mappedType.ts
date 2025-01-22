@@ -6,8 +6,13 @@ type Todo = {
 }
 
 // mapped type
-type stringTodo = {
+type STodo = Partial<Todo>
+type StringTodo = {
     [T in keyof Todo]? : Todo[T]
+}
+
+const task: StringTodo = {
+    task: "Ami kaj korbo "
 }
 
 }

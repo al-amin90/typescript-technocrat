@@ -11,6 +11,7 @@
         director: "mir vai"
     }
     type MovieDetails = typeof movie;
+
     const newMovie2: MovieDetails = {
         title: "kande moriya",
         director: "janin na"

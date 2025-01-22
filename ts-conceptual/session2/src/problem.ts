@@ -10,14 +10,14 @@
     // console.log(findLargestNumber([3, 56, 3, 756, 34]));
 
     const filterEvenNumbers = (nums: number[]): number[] => {
-        return nums.filter(num => num % 2 === 0)
+        return nums.filter((num) => num % 2 === 0)
     }
     // console.log(filterEvenNumbers([3, 56, 3, 756, 34]));
 
     const reverseArray = <T>(arr: T[]): T[] => {
         return arr.reverse()
     }
-    // console.log(reverseArray<number>(["df", "s", "aff", "re", "d"]));
+    // console.log(reverseArray<string>(["df", "s", "aff", "re", "d"]));
 
     interface Student {
         name: string;
@@ -25,7 +25,7 @@
         grades: number[]
     }
     const calclutedAverageAge = (std: Student): number => {
-        const total = std.grades.reduce((acc, num) => acc + num, 0)
+        const total = std.grades.reduce((acc, grade) => acc + grade, 0)
         return total / std.grades.length
     }
     // console.log(calclutedAverageAge({
@@ -49,7 +49,7 @@
     //     publishYear: 2020
     // }));
 
-    const logString = (input: unknown) => {
+    const logString = (input: unknown) : void => {
         if(typeof input === "string"){
             console.log(input);
         }else{
@@ -59,7 +59,12 @@
     // logString({})
 
     class Car {
-        constructor(public brand: string, public model: string, public year: number){}
+        constructor(
+            public brand: string, 
+            public model: string, 
+            public year: number
+        ){}4
+        
         displayInfo(): string{
             return `Your car model is ${this.model} from the company ${this.brand} released in ${this.year}` 
         }
