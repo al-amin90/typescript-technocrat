@@ -22,8 +22,8 @@
     }
 
     //function with generic
-    const addValue = <T, N, P>(v1: T, v2: N, personInfo: P) : {} => {
-        return {v1 , v2, personInfo};
+    const addValue = <T, N , P>(sms1: T, sms2: N, personInfo: P) : {} => {
+        return {sms1 , sms2, personInfo};
     }
     console.log(
         addValue<number, number, IPerson<boolean, number, string>>(   23, 
