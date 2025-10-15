@@ -17,5 +17,7 @@ const {
 } = user
 console.log(final);
 
-const myFriends = ['a', "b", "c", "d", "e"];
+const myFriends: string[] = ['a', "b", "c", "d", "e"];
 const [,, friend , ...rest] = myFriends;
+
+console.log('friend', friend);

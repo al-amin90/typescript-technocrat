@@ -1,12 +1,12 @@
 {
 // Object
 const user: {
-    readonly first: string;
-    middle: string;
+    first: string;
+    middle?: string;
     last: string;
     isMarried: true;
     company: "Programming Hero"; //type: Literal types
-    fullName: string;
+    readonly fullName: string;
 }  = {
     first: "al",
     // middle: "amiin",
@@ -18,7 +18,7 @@ const user: {
 
 
 user.first = "nothing"
-
+console.log('user',user);
 
 
 

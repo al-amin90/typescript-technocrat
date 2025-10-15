@@ -1,31 +1,39 @@
+{
+    
 const poorUser = {
     name: "mr. x"
 }
 
 const f1 : string[] = ["a","b","c"];
-const f2: string[] = ["d", "e", "f"]
+const f2 : string[]= ["d", "e", "f"]
 
 f1.push(...f2)
 
-const teacher1 ={
+type TTeacher = {
+    name: string;
+    skill: string;
+}
+
+const teacher1:TTeacher ={
     name: "a",
     skill: "html"
 }
-const teacher2 ={
+const teacher2 :TTeacher={
     name: "b",
-    skill: "css"
+    skill: '67'
 }
 
 const teachers = { 
     ...teacher1,
     ...teacher2
 }
-
+s
 // Rest Operator 
 
-const greetingFriends = (...friends: string[]) : void =>  {
+const greetingFriends = (...friends: string[]): void =>  {
     // console.log(`Hi ${f1} ${f2} ${f3}`);
-    friends.forEach((f) => console.log(`Hi ${f}`))
+    friends.forEach((f: string): void => console.log(`Hi ${f}`))
 }
 
 greetingFriends("a", "b", "c", "d")
+}
