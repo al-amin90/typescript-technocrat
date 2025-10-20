@@ -8,11 +8,7 @@
         }
     }
 
-    const student3 = addCourseToStudent<{
-        id: number;
-        email: string;
-        name: string;
-    }>({ id: 4, email: "emni@gmail.com", name: "emni" })
+    const student3 = addCourseToStudent({  emni: "emni" })
 
     const student1 = addCourseToStudent<{
         id: number;

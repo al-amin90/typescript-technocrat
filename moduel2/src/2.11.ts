@@ -8,7 +8,7 @@
         contactNo: number;
     }
 
-    type NameAge = Pick<Person, "name" | "age">
+    type NameAge = Pick<Person, 'name' | 'age'>
     // ===> Omit
     type ContactInfo = Omit<Person, "name" | "age" | "email">
     // ===> Required
@@ -28,13 +28,13 @@
     person1.age = 200
 
     // ===> Record
-     type MyObj1 = {
-        a: string;
-        b: string
-     }
-    type MyObj2 = Record<string, string>
+    //  type MyObj = {
+    //     a: string;
+    //     b: string
+    //  }
+    type MyObj = Record<string, string>
     
-    const obj1: MyObj2 = {
+    const obj1: MyObj = {
         a: "xx",
         b: "yy",
         c: "zz",

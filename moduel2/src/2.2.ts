@@ -9,7 +9,7 @@
         name: string;
         age: number;
     }
-    type UserWithRole = User2 & {role: string}
+    type UserWithRole = User1 & {role : string}
     // interface UserWithRole2 extends User2 {
     //     role: string
     // }
@@ -17,7 +17,7 @@
         role: string
     }
 
-    const User1: UserWithRole2 = {
+    const user1: UserWithRole2 = {
         name: "al amin",
         age: 23,
         role: "manager"
@@ -38,11 +38,8 @@
 
     // function
     type Add1 = (a: number , b: number) => number;
-    // interface Add2 {
-    //     (a: number, b : number) : number
-    // }
     interface Add2 {
-        (a: number, b: number) : number
+        (a: number, b : number) : number
     }
 
     const add = (a: number , b: number) : number => a + b ;

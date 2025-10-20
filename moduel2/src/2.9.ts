@@ -3,7 +3,7 @@
 type a1 = boolean;
 type b1 = undefined;
 
-type x = a1 extends number ? number : null ; // conditional type
+type x = a1 extends number ? true : false // conditional type
 type y = b1 extends boolean ? boolean : a1 extends number ? number : any
 
 type Sheikh = {

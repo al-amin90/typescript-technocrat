@@ -1,7 +1,7 @@
 {
 ///         intregate ---- Generic
 
-interface Developer< T, X = null> {
+interface Developer<T, X=null> {
     name: string;
     computer: {
         brand: string;

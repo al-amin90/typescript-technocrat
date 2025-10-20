@@ -11,16 +11,27 @@
     }
 
     type AreaString = {
-        [Key in keyof AreaNumber] : boolean
+        [Key in keyof AreaNumber ] : boolean
     }
 
     type Height = AreaNumber["height"]
 
-
-    type AreaString<T> = {
+// --------------------------------------------------------------
+    type Area2String<T> = {
         [key in keyof T] : T[key]
     }
+    type Area2StringReadOnly<T> = {
+        readonly [key in keyof T] : T[key]
+    }
+    type Area2StringPartial<T> = {
+         [key in keyof T]? : T[key]
+    }
+      const area: Area2String<{ height: number; width: string}> = {
+        height: 100,
+        width: "34"
+    }
 
+    // --------------------------------------------------------------
     type Compile<T, X> = {
         [key in keyof T] : X
     }
@@ -28,8 +39,5 @@
     type AreaBoolean = Compile<AreaNumber, boolean>
     type AreaUndefine = Compile<AreaNumber, null>
 
-    const area: AreaString<{ height: number; width: string}> = {
-        height: 100,
-        width: "34"
-    }
+  
 }

@@ -2,8 +2,9 @@
     // type assertion
     let anything : any;
 
-    anything = 34;
-
+    anything = "hello world";
+   
+    // (anything as string).
     // (anything as number). 
 
     const KgToGm = (value: string | number): string | number |undefined =>  {
@@ -19,7 +20,7 @@
 
 
     type CustomError = {
-        message: "all error"
+        message: string
     }
     
     try{
