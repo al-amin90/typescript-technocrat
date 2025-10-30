@@ -3,11 +3,12 @@
     const message = (value: string): string => {
         return value
     }
+    
     const result = message("Hello World, I will complete this course successfully and become a Next level Web Developer!")
 
-    //===> Task 2: Functions, Optional, and Literal Types
-    const message2 = (name: string, age: number, role?: 'admin' | 'user' | 'guest') => {
-        // console.log({ name, age, role });
+    // //===> Task 2: Functions, Optional, and Literal Types
+    const message2 = (name: string, age: number, role?: 'admin' | 'user' | 'guest' ) => {
+        console.log({ name, age, role });
     }
     message2('al amin', 22)
 
@@ -46,7 +47,7 @@
     const person: Person = {
         name: "al amin",
         address: "bherama",
-        hairAndEye: "black",
+        hairAndEye: "blonde",
         color: "green",
         incomeAndExpense: 3444,
         hobbies: ["game"],
@@ -90,19 +91,19 @@
     const reverseWord = (value: string) => {
         const splitString = value.split("")
         const reverse = splitString.reverse().join("")
-        // console.log(reverse);
+        console.log(reverse);
     }
     reverseWord("hello")
 
     //===> Task 6: Spread and Rest Operators, Destructuring
     let grandTotal = 0;
-    const spreadAge = (...ages: number[]) => {
-        const value = [3, 7];
-        const totalArray = [...value, ...ages]
-        const grandTotal = totalArray.reduce((total, num) => num + total)
+    const spreadAge = (...ages: number[]): number => {
+     
+        const grandTotal = ages.reduce((total, num) => num + total)
+        return grandTotal
         // console.log(grandTotal);
     }
-    spreadAge(2, 5, 7, 1)
+console.log(    spreadAge(2, 5, 7, 1));
 
     //===> Task 7: Type Assertion and Narrowing
     const isType = (value: string | Number): string | number | undefined => {
@@ -113,6 +114,7 @@
         }
     }
     const result3 = isType(9);
+
     // console.log(result3);    
 
     //===> Task 8: Intersection Types
@@ -160,40 +162,40 @@
     }
     // console.log(processData("alvaikunta"));
 
-    //===> Task 12: Never Type
-    // const handleError = (message: string): never => {
-    //     throw new Error (message)
+    // //===> Task 12: Never Type
+    // // const handleError = (message: string): never => {
+    // //     throw new Error (message)
+    // // }
+
+    // // try{
+    // //     handleError("something went wrong")
+    // // }catch(error){
+    // //     console.log(error);
+    // // }
+
+
+    // //===> Task 14: Asynchronous TypeScript and Type Aliases
+    // type MyUser = {
+    //     name: string;
+    //     age: number
+    // }
+    // const fetchUserData = (): Promise<MyUser> => {
+    //     return new Promise<MyUser>((resolve, reject) => {
+    //         setTimeout(() => {
+    //             const user: MyUser = {
+    //                 name: "al-amin",
+    //                 age: 34
+    //             }
+    //             resolve(user)
+    //         }, 2000)
+    //     })
     // }
 
-    // try{
-    //     handleError("something went wrong")
-    // }catch(error){
-    //     console.log(error);
+    // const getData = async () => {
+    //     const data = await fetchUserData();
+    //     // console.log(data);
     // }
-
-
-    //===> Task 14: Asynchronous TypeScript and Type Aliases
-    type MyUser = {
-        name: string;
-        age: number
-    }
-    const fetchUserData = (): Promise<MyUser> => {
-        return new Promise<MyUser>((resolve, reject) => {
-            setTimeout(() => {
-                const user: MyUser = {
-                    name: "al-amin",
-                    age: 34
-                }
-                resolve(user)
-            }, 2000)
-        })
-    }
-
-    const getData = async () => {
-        const data = await fetchUserData();
-        // console.log(data);
-    }
-    getData()
+    // getData()
 
     //===> Task 15: Type Guards
 

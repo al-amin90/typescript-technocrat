@@ -25,7 +25,7 @@
     getSpreedInMeterPerSecond('1000 kmh^-1')
 
     /// never type
-    const throwError = (sms: string) => {
+    const throwError = (sms: string): never=> {
         // throw new Error(sms)
         throw new Error(sms)
     }

@@ -1,18 +1,16 @@
 {
-    //
-    const message:unknown = "this is the sms";
-     const messageLength = (message as string).length
-     console.log(messageLength);
-     
-        type CustomError = {
-            message: "kisu akta"
-        }
+  //
+  const message: unknown = "this is the sms";
+  const messageLength = (message as string).length;
+  console.log(messageLength);
 
-     try{
+  type CustomError = {
+    message: "kisu akta";
+  };
 
-     }catch(error) {
-        console.log((error as CustomError).message);
-     }
-    // 
-
+  try {
+  } catch (error) {
+    console.log((error as CustomError).message);
+  }
+  //
 }

@@ -16,7 +16,7 @@
 
     const User1: User = {
         name: "al amin",
-        gender: "female",
+        gender: "male",
         bloodGrope: "O+"
     }
 
