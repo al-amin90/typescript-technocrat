@@ -18,8 +18,11 @@
 
     const dog = new Animale("mezba vai", "deg", "gheew ghew"); // agulo ak akta Instrains
     const cat = new Animale("Persian vai", "cat", "meow meow")
+
     dog.makeSound();
 }
+
+// =================> clean version
 {
     class Animal {
 

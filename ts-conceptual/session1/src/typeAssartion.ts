@@ -5,7 +5,7 @@
   console.log(messageLength);
 
   type CustomError = {
-    message: "kisu akta";
+    message: string;
   };
 
   try {

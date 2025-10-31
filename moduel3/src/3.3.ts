@@ -20,7 +20,8 @@
         role: string
       }
       const getUser = (user: NormalUser | AdminUser): void=> {
-        if("role" in user){
+        
+        if('role' in user){
             console.log(`My name is ${user.name} and my role is ${user.role}`);
         }else{
             console.log(`My name is ${user.name} `);
