@@ -6,7 +6,7 @@
     }
     type BookKeys = keyof Book;
 
-    const getBookProperty = <T, K extends keyof T>(book: T, key: K) : T[K]=> {
+    const getBookProperty =<B, K extends keyof B>(book:B, key:K): B[K] => {
         return book[key]
     }
 

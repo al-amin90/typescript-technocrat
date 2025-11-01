@@ -24,3 +24,5 @@
     play1.sound()
 
 }
+
+console.log('ok ok');

@@ -3,7 +3,7 @@
 
     //use "typeof"
     type MovieType = typeof movieName
-    const newMovie : MovieType = "DeadPool"
+    const newMovie : MovieType = "DeadPoollff"
 
     // typeof ar use 
     const movie = {
