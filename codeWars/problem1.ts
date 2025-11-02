@@ -23,8 +23,37 @@ function makeUpperCase(str: string) {
 }
 
 function solution(str: string, ending: string): boolean {
-  
-
   return str.endsWith(ending); // TODO: complete
 }
-console.log(solution("abcde", "abc"));
+// console.log(solution("abcde", "abc"));
+
+function humanYearsCatYearsDogYears(
+  humanYears: number
+): [number, number, number] {
+  const years = [];
+  let catYears = 0;
+  let dogYears = 0;
+
+  for (let i = 1; i <= humanYears; i++) {
+    years.push(i);
+  }
+
+  years?.forEach((y) => {
+    if (y === 1) {
+      catYears += 15;
+      dogYears += 15;
+    } else if (y === 2) {
+      catYears += 9;
+      dogYears += 9;
+    } else {
+      catYears += 4;
+      dogYears += 5;
+    }
+  });
+  console.log("years", years);
+
+  // Your code here!
+  return [humanYears, catYears, dogYears];
+}
+
+console.log(humanYearsCatYearsDogYears(10));
