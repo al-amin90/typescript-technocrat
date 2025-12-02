@@ -57,7 +57,104 @@ db.test.aggregate([
         }
         
     },
+])
+
+
+db.test.aggregate([
+    //stage -1
+    {
+        $unwind: "$interests"
+    },
+
+    //stage -2
+    {
+        $group: { 
+            _id: '$age', 
+            // countFriends: {$sum: 1},
+            thatAgeInterest: {$push: '$interests'},
+        }
+    },
+    //stage -3
+    {
+        $sort: {_id: -1}
+}])
+
+db.test.aggregate([
+    //stage -1
+    {
+        $bucket: {
+              groupBy: "$age",
+              boundaries: [ 20, 40, 60, 80 ],
+              default: "80 ar upor ar bura gula",
+              output: {
+                "count": { $sum: 1 },
+                "titles" : { $push: "$name.firstName" }
+              }
+            }
+    },
+
+    //stage -2
+    {
+        $sort: {count: 1}
+    },
+    // {
+    //     $group: { 
+    //         _id: '$age', 
+    //         // countFriends: {$sum: 1},
+    //         thatAgeInterest: {$push: '$interests'},
+    //     }
+    // },
     
- 
-]
-)
+    {
+        $limit: 2
+    },
+    //stage -3
+    {
+        $project: {
+            count: 1
+        },
+    },
+])
+
+db.test.aggregate([
+    {
+        $facet: {
+            // pipeline -1
+            'friendsCount': [
+                //stage -1
+                {$unwind: "$friends"},
+                //stage -2
+                { $group: { _id: "$friends", count: {$sum: 1}}}
+            ],
+            // pipeline -2
+            'educationCount': [
+                //stage -1
+                {$unwind: "$education"},
+                //stage -2
+                {$group: { _id: "$education.major", count: {$sum: 1}}}
+                ],
+            // pipeline  -3 
+            'interestCount': [
+                 //stage -1
+                {$unwind: "$interests"},
+                //stage -2
+                {$group: { _id: "$interests", count: {$sum: 1}}}
+            ]
+        }
+    }
+])
+
+db.getCollection("massive-data").find({ $text: {$search: 'dolor'}}).project({about: 1})
+
+db.orders.aggregate([
+    {
+        $lookup: {
+               from: "test",
+               localField: "userId",
+               foreignField: "_id",
+               as: "user"
+             }
+    }    
+])
+
+db.test.find({_id: ObjectId("6406ad63fc13ae5a40000066")}).explain("executionStats")
