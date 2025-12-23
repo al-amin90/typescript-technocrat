@@ -75,3 +75,64 @@ db.orders.aggregate([
     }
 },
 ])
+
+db.orders.aggregate([
+                {
+                $match: {status: 'Shipped'}
+            },
+{ 
+    $facet: {
+        totalPrice: [
+            // pipeline -1
+                {
+                    $project: {
+                        orderTotal: {
+                            $sum: {
+                                $map: {
+                                  input: "$products",
+                                  as: "product",
+                                  in: { $multiply: ["$$product.quantity", "$$product.price_per_unit"] }
+                                }
+                            }
+                    }
+                }
+                    },
+                {
+                    $group: { 
+                        _id: null, 
+                        totalSales: { $sum: '$orderTotal'}
+                    },
+               
+                },
+                { $project: {
+                    _id: 0,
+                    totalSales:1
+                }}
+            ],
+        
+        avgPrice: [
+            {
+                $project: {total:   {
+                    $sum: {
+                        $map: {
+                          input: "$products",
+                          as: "product",
+                          in: { $multiply: ["$$product.quantity", "$$product.price_per_unit"] }
+                    }
+                    }
+                } 
+                }
+            },
+            {
+                $group: { _id: null, totalAvg: {$avg: "$total"}}
+            },
+            {
+                $project: {
+                    _id: 0,
+                    totalAvgSales: '$totalAvg'
+                }
+            }
+        ]
+    }
+},
+])
