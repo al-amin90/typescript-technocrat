@@ -17,3 +17,10 @@ const tagsFromPosts = [
   ["css", "html", "react"],
 ];
 console.log([...new Set(tagsFromPosts.flat(Infinity))]); //? [ 'javascript', 'react', 'css', 'node', 'express', 'html' ]
+
+const tagsFromPosts = [
+  ["javascript", "react", "css"],
+  ["node", "express"],
+  ["css", "html", "react"],
+];
+console.log([...new Set(tagsFromPosts.flat(Infinity))]); //? [ 'javascript', 'react', 'css', 'node', 'express', 'html' ]
