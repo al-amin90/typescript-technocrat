@@ -1,0 +1,125 @@
+"use strict";
+{
+    //===> Task 1: Basic Data Types and First Program
+    const message = (value) => {
+        return value;
+    };
+    const result = message("Hello World, I will complete this course successfully and become a Next level Web Developer!");
+    // //===> Task 2: Functions, Optional, and Literal Types
+    const message2 = (name, age, role) => {
+        console.log({ name, age, role });
+    };
+    message2('al amin', 22);
+    const person = {
+        name: "al amin",
+        address: "bherama",
+        hairAndEye: "blonde",
+        color: "green",
+        incomeAndExpense: 3444,
+        hobbies: ["game"],
+        family: {
+            relation: "sibling",
+            name: "al amin",
+            age: 23,
+        },
+        members: 5,
+        skills: ["html"],
+        maritalStatus: "single",
+        friends: {
+            name: "goru",
+            yearsKnown: 0,
+        }
+    };
+    const pages = {
+        name: "Adult Book",
+        popularity: "65%"
+    };
+    const pages2 = {
+        name: "iju pagle",
+        popularity: "54%",
+        publishYear: 34,
+    };
+    //===> Task 5: Function Type
+    const reverseWord = (value) => {
+        const splitString = value.split("");
+        const reverse = splitString.reverse().join("");
+        console.log(reverse);
+    };
+    reverseWord("hello");
+    //===> Task 6: Spread and Rest Operators, Destructuring
+    let grandTotal = 0;
+    const spreadAge = (...ages) => {
+        const grandTotal = ages.reduce((total, num) => num + total);
+        return grandTotal;
+        // console.log(grandTotal);
+    };
+    console.log(spreadAge(2, 5, 7, 1));
+    //===> Task 7: Type Assertion and Narrowing
+    const isType = (value) => {
+        if (typeof value === "string") {
+            return value.length;
+        }
+        else if (typeof value === "number") {
+            return Math.pow(value, 2);
+        }
+    };
+    const result3 = isType(9);
+    const describeAdmin = (user) => {
+        return user.description;
+    };
+    const result4 = describeAdmin({ name: "alamin", email: "iejesun30@gmail.com", adminLevel: "employ", description: "there is nothing to say" });
+    const getEmployeeCity = (employee) => {
+        var _a;
+        return (_a = employee === null || employee === void 0 ? void 0 : employee.address) === null || _a === void 0 ? void 0 : _a.city;
+    };
+    // console.log(getEmployeeCity({name: 'alamin', address:{city: "kushtia"}}));
+    //===> Task 10: Nullish Coalescing
+    const getDisplayName = (name) => {
+        return name !== null && name !== void 0 ? name : "Anonymous";
+    };
+    // console.log(getDisplayName("s"));
+    //===> Task 11: Unknown Type
+    const processData = (data) => {
+        if (typeof data === "string") {
+            return data.toUpperCase();
+        }
+        else if (typeof data === "number") {
+            return Math.pow(data, 2);
+        }
+        else {
+            return "Wrong Output";
+        }
+    };
+    // console.log(processData("alvaikunta"));
+    // //===> Task 12: Never Type
+    // // const handleError = (message: string): never => {
+    // //     throw new Error (message)
+    // // }
+    // // try{
+    // //     handleError("something went wrong")
+    // // }catch(error){
+    // //     console.log(error);
+    // // }
+    // //===> Task 14: Asynchronous TypeScript and Type Aliases
+    // type MyUser = {
+    //     name: string;
+    //     age: number
+    // }
+    // const fetchUserData = (): Promise<MyUser> => {
+    //     return new Promise<MyUser>((resolve, reject) => {
+    //         setTimeout(() => {
+    //             const user: MyUser = {
+    //                 name: "al-amin",
+    //                 age: 34
+    //             }
+    //             resolve(user)
+    //         }, 2000)
+    //     })
+    // }
+    // const getData = async () => {
+    //     const data = await fetchUserData();
+    //     // console.log(data);
+    // }
+    // getData()
+    //===> Task 15: Type Guards
+}

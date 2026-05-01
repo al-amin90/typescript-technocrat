@@ -24,3 +24,9 @@ postsArray.forEach((i) => {
 
 console.log(output);
 console.timeEnd("object");
+
+const output2 = postsArray.reduce((acc, i) => {
+  return { ...acc, [i.id]: i };
+}, postsArray[0]);
+
+console.log(output2);
