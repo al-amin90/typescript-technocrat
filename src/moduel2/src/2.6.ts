@@ -1,46 +1,32 @@
 {
-    //constraints
-    const addCourseToStudent = <T extends { id: number, name: string, email: string }>(student: T) => {
-        const course: string = 'Next Level Web Development'
-        return {
-            ...student,
-            course
-        }
-    }
+  //constraints
+  type Student = { id: number; name: string; email: string };
 
-    const student3 = addCourseToStudent({  emni: "emni" })
+  const addCourseToStudent = <T extends Student>(student: T) => {
+    const course: string = "Next Level Web Development";
+    return {
+      ...student,
+      course,
+    };
+  };
 
-    const student1 = addCourseToStudent<{
-        id: number;
-        name: string;
-        email: string;
-        devType: string;
-    }>({
-        id: 23,
-        name: "x",
-        email: "x@gmail.com",
-        devType: "BLWD"
-    });
+  const student3 = addCourseToStudent({ emni: "emni" });
 
-    const student2 = addCourseToStudent<{
-        id: number;
-        name: string;
-        email: string;
-        shasType: string;
-    }>({
-        id: 35,
-        name: "x",
-        email: "x@gmail.com",
-        shasType: "Admin"
-    });
+  const student1 = addCourseToStudent({
+    id: 23,
+    name: "x",
+    email: "x@gmail.com",
+    devType: "BLWD",
+  });
 
-
-
-
-
-
-
-
-
-
+  const student2 = addCourseToStudent({
+    id: 35,
+    name: "x",
+    email: "x@gmail.com",
+    shasType: "Admin",
+  });
 }
+const getLength = <T extends { length: number }>(value: T) => {
+  return value.length;
+};
+console.log(getLength<string>("hello world"));
