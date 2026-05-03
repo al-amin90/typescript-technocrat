@@ -1,49 +1,50 @@
 {
-    //interface
+  //interface
 
-    type User1 = {
-        name: string;
-        age: number
-    }
-    interface User2 {
-        name: string;
-        age: number;
-    }
-    type UserWithRole = User1 & {role : string}
-    // interface UserWithRole2 extends User2 {
-    //     role: string
-    // }
-    interface UserWithRole2 extends User2 {
-        role: string
-    }
+  type User1 = {
+    name: string;
+    age: number;
+  };
+  interface User2 {
+    name: string;
+    age: number;
+  }
+  type UserWithRole = User1 & { role: string };
+  // interface UserWithRole2 extends User2 {
+  //     role: string
+  // }
+  interface UserWithRole2 extends User2 {
+    role: string;
+  }
 
-    const user1: UserWithRole2 = {
-        name: "al amin",
-        age: 23,
-        role: "manager"
-    }
+  const user1: UserWithRole2 = {
+    name: "al amin",
+    age: 23,
+    role: "manager",
+  };
 
-    ///             js ---> Object , Array -> Object Function ->> Object
+  ///             js ---> Object , Array -> Object Function ->> Object
 
-    type Roll = number[]
-    interface Roll1 {
-        [index: number] : number
-    }
-    
-    const rollNumbers1: number[] = [2, 4,5 ,23, 6]
-    const rollNumbers2: Roll = [2, 4,5 ,23, 6]
-    const rollNumbers3: Roll1 = [2, 4,5 ,23, 6]
-                            //   0  1 2  3   4
-    const rollNumbers4: Array<number> = [2, 4,5 ,23, 6]
+  type Roll = number[];
+  interface Roll1 {
+    [index: number]: number;
+  }
 
-    // function
-    type Add1 = (a: number , b: number) => number;
-    interface Add2 {
-        (a: number, b : number) : number
-    }
+  const rollNumbers1: number[] = [2, 4, 5, 23, 6];
+  const rollNumbers2: Roll = [2, 4, 5, 23, 6];
+  const rollNumbers3: Roll1 = [2, 4, 5, 23, 6];
+  //   0  1 2  3   4
+  const rollNumbers4: Array<number> = [2, 4, 5, 23, 6];
 
-    const add = (a: number , b: number) : number => a + b ;
-    const add1: Add2 = (a , b) => a + b ;
+  // function
+  type Add1 = (a: number, b: number) => number;
+  interface Add2 {
+    (a: number, b: number): number;
+  }
 
+  const add = (a: number, b: number): number => a + b;
+  const add1: Add2 = (a, b) => a + b;
 
+  let anything: any;
+  anything = "sdf";
 }
