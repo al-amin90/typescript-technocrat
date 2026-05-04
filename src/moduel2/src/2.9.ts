@@ -31,5 +31,6 @@
   };
 
   type checkVehicle<T> = T extends keyof Sheikh ? true : false;
+
   type HasCar = checkVehicle<"plane">;
 }
